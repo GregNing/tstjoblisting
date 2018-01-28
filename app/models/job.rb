@@ -15,6 +15,7 @@
 
 class Job < ApplicationRecord
     belongs_to :user
+    has_many :resumes
     validates :title, :description, presence: { message: "必填項目" } 
     validates :contact_email, email_format: { :message => '請使用Email格式好方便做聯繫' }
     validates :wage_upper_bound, numericality: { greater_than: 0, message: '必須為數字，且大於0'}    

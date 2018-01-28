@@ -1,6 +1,8 @@
 class Admin::JobsController < ApplicationController
     before_action :authenticate_user!, only: [:index, :new , :create, :edit, :update,:show,:destroy,:publish,:hide] 
     before_action :find_jobs_id, only: [:edit, :update,:show,:destroy,:publish,:hide] 
+    before_action :require_is_admin
+    layout "admin"
     def index        
         @jobs = Job.all.orderdescycreated.paginate(page: params[:page], per_page: 5)
     end
@@ -33,7 +35,8 @@ class Admin::JobsController < ApplicationController
 
     def publish
         @jobs.to_publish
-        redirect_to admin_jobs_path, notice: "#{@jobs.title}發布成功"
+        
+         redirect_back fallback_location: root_path , notice: "#{@jobs.title}發布成功"  
     end
     def hide
         @jobs.to_hide                

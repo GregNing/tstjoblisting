@@ -2,7 +2,15 @@ class JobsController < ApplicationController
     before_action :authenticate_user!, only: [:index, :new , :create, :edit, :update,:show,:destroy]    
     before_action :find_jobs_id, only: [:edit, :update,:show,:destroy]    
     def index
-        @jobs = Job.all.ishidden.orderdescycreated.paginate(page: params[:page], per_page: 5)
+        @jobs = 
+        @jobs = case params[:order]
+                when 'by_lower_bound'
+                    Job.all.ishidden.descbywage_lower_bound.paginate(page: params[:page],per_page: 5)
+                when 'by_upper_bound'
+                    Job.all.ishidden.descbywage_upper_bound.paginate(page: params[:page],per_page: 5)
+                else
+                    Job.all.ishidden.orderdescycreated.paginate(page: params[:page], per_page: 5)
+                end
     end
     def new
         @jobs = Job.new
@@ -27,6 +35,10 @@ class JobsController < ApplicationController
         end
     end
     def show
+        if @jobs.is_hidden
+            flash[:warning] = "尚未開放"
+            redirect_to root_path
+        end
     end
     def destroy
         @jobs.destroy
