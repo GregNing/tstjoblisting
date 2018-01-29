@@ -1,41 +1,63 @@
-
-  <div class="jumbotron">
-    <h1 class="title">60k Offer</h1>
-    <p class="slogan">60k Offer 是一个提供60k薪水工作機會的求職網站。
-    <br>
-    我们希望藉由这个网站，能让大家找到且应征上高薪且优质的工作。
-    <br>
-     凭借自己的努力和天份也会变 Winner
-    </p>
-    <p class="lead"><a class="btn btn-lg btn-danger" href="/jobs">馬上查看</a></p>
+<div class="col-md-12">
+  <div class="row box">
+    <div class="box-inner col-md-6 col-md-offset-3">
+      <h1 class="title">60k Offer</h1>
+      <p class="slogan">60k Offer 是一个提供60k薪水工作機會的求職網站。
+        <br>
+        我們希望藉由這個網站能讓大家找到且應徵上高薪優職的工作。        
+        <br>        
+        憑藉自己的努力和天份也會變 Winner
+      </p>
+      <p class="lead">
+        <%= link_to '馬上應徵', jobs_path, class: 'btn btn-danger' %>
+      </p>
+    </div>
   </div>
-  <section id="company">
-  <div class = "container-fluid">
+</div>
+<div class="content-section-a">
+  <div class="container">
     <div class="row">
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-43-31.png" alt="search" class = "img-thumbnail">
-          <div class="caption">
-            <h3>北京朝阳建外SOHO</h3>
-          </div>
-        </div>
+      <div class="col-lg-5 col-sm-6">
+        <hr class="section-heading-spacer">
+        <div class="clearfix"></div>
+        <h2 class="section-heading">找工作一定要帶手機</h2>
+        <p class="lead">沒帶手機無法聯絡</p>
       </div>
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-43-48.png" alt="bid" class = "img-thumbnail">
-          <div class="caption">
-            <h3>info@18koffer.com</h3>
-          </div>
-        </div>
-      </div>
-      <div class="col-sm-4 ">
-        <div class="thumbnail">
-          <img src="http://fullstack-public.oss-cn-qingdao.aliyuncs.com/2017-04-15-Screenshot%20at%20Apr%2015%2021-44-00.png" alt="heart" class = "img-thumbnail">
-          <div class="caption">
-            <h3>010-12344321</h3>
-          </div>
-        </div>
+      <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+        <%= image_tag 'pic-1.jpg', class: 'img-responsive' %>
       </div>
     </div>
   </div>
-</section>
+</div>
+
+<div class="content-section-b">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+        <hr class="section-heading-spacer">
+        <div class="clearfix"></div>
+        <h2 class="section-heading">履歷寫好再投遞</h2>
+        <p class="lead">履歷如果不會寫一定要上網尋求協助  <a target="_blank" href="http://gregyang.logdown.com/">Greg 的 Blog</a>! 啦啦啦啦啦啦啦</p>
+      </div>
+      <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+        <%= image_tag 'pic-2.jpg', class: 'img-responsive' %>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="content-section-a">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-5 col-sm-6">
+        <hr class="section-heading-spacer">
+        <div class="clearfix"></div>
+        <h2 class="section-heading">請努力嘗試<br>Try it</h2>
+        <p class="lead">大家一起加油吧<a target="_blank" href="http://gregyang.logdown.com/">一起討論</a></p>
+      </div>
+      <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+        <%= image_tag 'pic-3.jpg', class: 'img-responsive' %>
+      </div>
+    </div>
+  </div>
+</div>
